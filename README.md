@@ -22,7 +22,7 @@ Fluid Mechancis
 
 1. Install MOOSE according to the directions specified in https://mooseframework.inl.gov/getting_started/installation/
 2. Clone this repository into the "moose_projects" directory containing your default MOOSE installation
-3. Build your Kraken installation using "make -j" in the "moose_projects/Kraken" directory.
-4. You may need to change the location of the default MOOSE directory and conda directories in the makefile depending on your system and installation. 
+3. Activate your moose conda enviornment and build your Kraken installation using "make -j" in the "moose_projects/Kraken" directory.
+4. You will need to change the location of the default MOOSE directory in the makefile (lines 17-18). 
 5. Kraken hyperelastic simulaitons can be run from the "Kraken/problems" directory like any normal MOOSE simulaiton. 
 6. Several sample simulaitons have been included for reference.  
