@@ -7,12 +7,12 @@
 //* Licensed under LGPL 2.1, please see LICENSE for details
 //* https://www.gnu.org/licenses/lgpl-2.1.html
 
-#include "AD_NH_V3.h"
+#include "AD_NH_V4.h"
 
-registerMooseObject("TensorMechanicsApp", AD_NH_V3);
+registerMooseObject("TensorMechanicsApp", AD_NH_V4);
 
 InputParameters
-AD_NH_V3::validParams()
+AD_NH_V4::validParams()
 {
   InputParameters params = ADComputeStressBase::validParams();
   params.addClassDescription("Compute stress using elasticity for finite strains");
@@ -23,7 +23,7 @@ AD_NH_V3::validParams()
   return params;
 }
 
-AD_NH_V3::AD_NH_V3(
+AD_NH_V4::AD_NH_V4(
     const InputParameters & parameters)
   : ADComputeStressBase(parameters),
   _F(getADMaterialProperty<RankTwoTensor>("F")),
@@ -43,12 +43,12 @@ AD_NH_V3::AD_NH_V3(
 }
 
 void
-AD_NH_V3::initialSetup()
+AD_NH_V4::initialSetup()
 {
 }
 
 void
-AD_NH_V3::initQpStatefulProperties()
+AD_NH_V4::initQpStatefulProperties()
 {
   ADComputeStressBase::initQpStatefulProperties();
   RankTwoTensor identity_rotation(RankTwoTensor::initIdentity);
@@ -57,7 +57,7 @@ AD_NH_V3::initQpStatefulProperties()
 }
 
 void
-AD_NH_V3::computeQpStress()
+AD_NH_V4::computeQpStress()
 {
   // Calculate the stress in the intermediate configuration
   ADRankTwoTensor intermediate_stress;
@@ -65,7 +65,7 @@ AD_NH_V3::computeQpStress()
 
   for (_qp = 0; _qp < _qrule->n_points(); ++_qp)
   {
-    ADRankTwoTensor B=_F[_qp].transpose()*_F[_qp];
+    ADRankTwoTensor B=_F[_qp]*_F[_qp].transpose();
     double J=_F[_qp].det().value();
     double C1=_mu/2;
     double D1=_kappa/2;
@@ -74,10 +74,12 @@ AD_NH_V3::computeQpStress()
     intermediate_stress=2*C1*B+p*I;
 
   
-    _stress[_qp]= intermediate_stress;
     // Rotate the stress state to the current configuration
-    // if  (_large_rotations){_stress[_qp] = _rotation_increment[_qp] * intermediate_stress * _rotation_increment[_qp].transpose();}
-    // else{_stress[_qp] = _rotation_total[_qp] * intermediate_stress * _rotation_total[_qp].transpose();  }
+    if  (_large_rotations){
+    _stress[_qp] = _rotation_increment[_qp] * intermediate_stress * _rotation_increment[_qp].transpose();
+    }
+    else{_stress[_qp] = _rotation_total[_qp] * intermediate_stress * _rotation_total[_qp].transpose(); 
+    }
 
 
     // Assign value for elastic strain, which is equal to the mechanical strain
