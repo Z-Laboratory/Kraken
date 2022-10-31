@@ -8,17 +8,17 @@ Kraken has been developed to allow users to simulate hyperelastic materials and 
 # Features
 
 Current Features:
-*Neo-Hookean Hyperelastic Material Modeling 
-*Transient and Static loading analysis
-*Dynamic loading analysis and Damping
-*Contact Mechanics and Multibody Interatcion
-*Reduced density mesh contact modeling
-*Custom Selection of Simulaiton parameters such as preconditioner, solve type, parellelization,ect. 
+* Neo-Hookean Hyperelastic Material Modeling 
+* Transient and Static loading analysis
+* Dynamic loading analysis and Damping
+* Contact Mechanics and Multibody Interatcion
+* Reduced density mesh contact modeling
+* Custom Selection of Simulaiton parameters such as preconditioner, solve type, parellelization,ect. 
 
 Work in progress Features:
-*Fluid Mechancis and Fluid-Structure Interatction (FSI)
-*Uncertainty Quantification (UQ)
-*Computational Acceleration via proxy Models
+* Fluid Mechancis and Fluid-Structure Interatction (FSI)
+* Uncertainty Quantification (UQ)
+* Computational Acceleration via proxy Models
 
 # Installation
 
