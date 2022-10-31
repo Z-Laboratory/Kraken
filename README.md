@@ -3,20 +3,22 @@
 # Overview 
 This repository serves as an extension to Idaho National Lab's popular MOOSE simulaiton enviornment. 
 
-Kraken has been developed to allow users to simulate hyperelastic materials using Finite-Element Analysis (FEA).
+Kraken has been developed to allow users to simulate hyperelastic materials and soft robotsusing Finite-Element Analysis (FEA).
 
 # Features
 
 Current Features:
-Neo-Hookean Hyperelastic Material Modeling 
-Transient and Static loading analysis
-Custom Selection of Simulaiton parameters such as preconditioner, solve type, parellelization,ect. 
+*Neo-Hookean Hyperelastic Material Modeling 
+*Transient and Static loading analysis
+*Dynamic loading analysis and Damping
+*Contact Mechanics and Multibody Interatcion
+*Reduced density mesh contact modeling
+*Custom Selection of Simulaiton parameters such as preconditioner, solve type, parellelization,ect. 
 
 Work in progress Features:
-Contact mechanics
-Multibody interaction 
-Dynamics
-Fluid Mechancis
+*Fluid Mechancis and Fluid-Structure Interatction (FSI)
+*Uncertainty Quantification (UQ)
+*Computational Acceleration via proxy Models
 
 # Installation
 
