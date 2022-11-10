@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
   <head>
@@ -16,13 +17,13 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">LiquidLib</h1>
+        <h1 class="header">Kraken</h1>
         <p class="header"></p>
         <p>
         	Users can access Kraken with their GitHub accounts:
         </p>
         <ul>
-          <!-- <li class="download"><a class="buttons" href="https://github.com/Zhang-Group/LiquidLib/zipball/master">Download ZIP</a></li> -->
+
 					<li class="download"><a class="buttons github" href="https://github.com/Z-Laboratory/Kraken">View On GitHub</a></li>
         </ul>
         <p>
@@ -41,23 +42,36 @@
         </p>
     <h3>
 <a id="LiquidLib" class="anchor" href="#LiquidLib" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h3>
-        <p style="text-align:justify">Introduction text here
-            <br />
+        <p style="text-align:justify">The accurate modeling and simulation of soft, hyperelastic and deformable materials is critical to many fields of study such as biological engineering, medicine, and soft robotics. Existing simulation tools are often closed source, unwieldy, or lacking critical features for accurate simulation.
+
+Kraken is an open-source Multiphysics Finite Element Method (FEM) software package that is built off of Idaho Nation Lab’s MOOSE software. It has the capacity to quickly and accurately simulate a wide variety of different types of physical processes that might be associated with soft bodies. Furthermore, the framework is open source and easily extensible, making it easy for end users to implement additional custom physics.
+       <br />
             <br />
             More details are provided in our publication <a href="https://ieeexplore.ieee.org/document/9565889">[DOI]</a>.
         </p>
 
         <h3> <a href="#Capabilities" class="anchor" id="Capabilities" aria-hidden="true"><span class="octicon octicon-link"></span></a>Capabilities</h3>
-        <p>Kraken provides computation the following quantities:
+        <p>Kraken provides the ability to simulate the following quantities:
         <ul>
-        <li>Hyperelastic Modeling</li>
+        <li>Neo-Hookean Hyperelastic Material Modeling</li>
+        <li>Transient and Static Loading Analysis</li>
+        <li>Dynamic Loading Analysis and Damping</li>
+        <li>Contact Mechanics and Multibody Interatcion</li>
+        <li>Reduced Density Mesh Contact Modeling</li>
+        <li>Custom Selection of Simulaiton parameters such as preconditioner, solve type, parellelization,ect.</li>
+</ul>
+    <p>The following features are currently under development:</p>
+        <ul>
+            <li>Fluid Mechancis and Fluid-Structure Interatction (FSI)</li>
+            <li>Uncertainty Quantification (UQ)</li>
+    <li>Computational Acceleration via proxy Models</li>
+    </ul>
 
-        </p>
 
 <h3> <a href="#reference" class="anchor" id="reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h3>
     <p>If used, please cite the following reference:
 <ul>
-<li>reference</a></li>
+<li>K. Wandke and Y. Z, "MOOSE-Based Finite Element Hyperelastic Modeling for Soft Robot Simulations," in IEEE Access, vol. 9, pp. 139627-139635, 2021, doi: 10.1109/ACCESS.2021.3119009.</a></li>
 </ul>
     </p>
 
